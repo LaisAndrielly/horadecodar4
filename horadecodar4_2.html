@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Planetas</title>
+</head>
+<body>
+    <h1>Verifique se um planeta está na lista</h1>
+    <script>
+        const planetas = ["Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"];
+        const nomePlaneta = prompt("Digite o nome de um planeta:");
+
+        if (planetas.includes(nomePlaneta)) {
+            alert(`${nomePlaneta} está na lista dos planetas.`);
+        } else {
+            alert(`${nomePlaneta} não está na lista dos planetas.`);
+        }
+    </script>
+</body>
+</html>

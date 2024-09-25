@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Estudantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #d9edf7;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastro de Estudantes</h1>
+    <button onclick="cadastrarEstudantes()">Cadastrar Estudantes</button>
+
+    <script>
+        function cadastrarEstudantes() {
+            const estudantes = [];
+            let nome;
+
+            while (true) {
+                nome = prompt("Digite o nome do estudante (ou 'PARE' para finalizar):");
+
+                if (nome.toUpperCase() === "PARE") {
+                    break;
+                }
+
+                if (nome) {
+                    estudantes.push(nome);
+                } else {
+                    alert("Por favor, insira um nome válido.");
+                }
+            }
+
+            exibirResultados(estudantes);
+        }
+
+        function exibirResultados(estudantes) {
+            const quantidade = estudantes.length;
+            let mensagem = `Quantidade de estudantes cadastrados: ${quantidade}\n\nLista de Estudantes:\n`;
+
+            if (quantidade > 0) {
+                mensagem += estudantes.join('\n');
+            } else {
+                mensagem += "Nenhum estudante foi cadastrado.";
+            }
+
+            alert(mensagem);
+        }
+    </script>
+</body>
+</html>
+
